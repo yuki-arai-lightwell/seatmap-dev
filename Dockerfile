@@ -30,7 +30,8 @@ RUN chmod 777 /var/log/httpd
 RUN chmod 777 /
 RUN mkdir /web
 RUN mkdir /web/cgi
-RUN chmod 755 /web/cgi
+RUN chmod 777 /web
+RUN chmod 777 /web/cgi
 ADD httpd.conf /etc/httpd/conf/httpd.conf
 ADD index.html /web/index.html
 ADD index.cgi /web/cgi/index.cgi
