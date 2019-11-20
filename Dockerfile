@@ -1,6 +1,5 @@
 FROM centos:7
 
-# YUM requires root 
 USER 0
 
 RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
