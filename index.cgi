@@ -3,15 +3,15 @@ import cgi
 import cgitb
 from http import cookies
 
-#“ú–{Œê‚ğˆ—‚·‚é‚Ì‚É•K—v
+#æ—¥æœ¬èªã‚’å‡¦ç†ã™ã‚‹ã®ã«å¿…è¦
 import sys
 import io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-#ƒfƒoƒbƒO‹@”\‚ğ—LŒø‚É‚·‚é
+#ãƒ‡ãƒãƒƒã‚°æ©Ÿèƒ½ã‚’æœ‰åŠ¹ã«ã™ã‚‹
 cgitb.enable()
 
-#ƒtƒH[ƒ€î•ñ‚Ìæ‚è‚İ
+#ãƒ•ã‚©ãƒ¼ãƒ æƒ…å ±ã®å–ã‚Šè¾¼ã¿
 form = cgi.FieldStorage()
 
 if len(form) == 0:
@@ -24,7 +24,7 @@ else:
     C = cookies.SimpleCookie()
     C["name"] = CC
 
-#ƒTƒ“ƒvƒ‹
+#ã‚µãƒ³ãƒ—ãƒ«
 print("Content-type: text/html;\n\n")
 print("<html><body><h1>test cgi</h1>\n")
 print("""
@@ -33,17 +33,17 @@ AAA<br>
 BBB<br>
 <hr>
 CCC<br>
-ƒeƒXƒg•\¦<br>
+ãƒ†ã‚¹ãƒˆè¡¨ç¤º<br>
 <form id="form1" name="form1" method="post" action=test.py>
 <br>
-–¼‘OF<input type="text" name=name value="–¼‘O">
-<input type="submit" value="XV">
+åå‰ï¼š<input type="text" name=name value="åå‰">
+<input type="submit" value="æ›´æ–°">
 <input type="hidden" name="event" value="mod">
 <input type="hidden" name="num" value="24">
 </form>
 """)
-print("<hr>“ü—Í“à—e<br>")
-#ƒtƒH[ƒ€‚Ì“à—e‚ğ•\¦
-print(f'–¼‘OF<b>',CC,"</b><br>")
+print("<hr>å…¥åŠ›å†…å®¹<br>")
+#ãƒ•ã‚©ãƒ¼ãƒ ã®å†…å®¹ã‚’è¡¨ç¤º
+print(f'åå‰ï¼š<b>',CC,"</b><br>")
 print(C)
 print("</body></html>\n")
