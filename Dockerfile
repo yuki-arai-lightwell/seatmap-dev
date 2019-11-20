@@ -38,6 +38,7 @@ RUN chmod 766 /web/index.html
 RUN chmod 755 /web/cgi/index.cgi
 
 
+
 # CGI scripts go to /opt/rh/httpd24/root/var/www/cgi-bin/
 #ADD share/cgi-bin ${HTTPD_DATA_ORIG_PATH}/cgi-bin/
 
