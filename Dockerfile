@@ -27,11 +27,13 @@ RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm && \
 
 RUN chmod 777 /run/httpd
 RUN chmod 777 /var/log/httpd
+RUN mkdir -p /web/cgi
+RUN chmod 755 /web/cgi
 ADD httpd.conf /etc/httpd/conf/httpd.conf
-ADD index.html /var/www/html/index.html
-ADD index.cgi /var/www/cgi-bin/index.cgi
-RUN chmod 766 /var/www/html/index.html
-RUN chmod 755 /var/www/cgi-bin/index.cgi
+ADD index.html /web/index.html
+ADD index.cgi /web/cgi/index.cgi
+RUN chmod 766 /web/index.html
+RUN chmod 755 /web/cgi/index.cgi
 
 
 # CGI scripts go to /opt/rh/httpd24/root/var/www/cgi-bin/
