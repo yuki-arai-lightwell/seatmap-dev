@@ -25,6 +25,8 @@ RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm && \
 #    rm -rf /var/cache/yum
 #    /usr/libexec/httpd-prepare && rpm-file-permissions
 
+RUN localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
+
 RUN chmod 777 /run/httpd
 RUN chmod 777 /var/log/httpd
 ADD httpd.conf /etc/httpd/conf/httpd.conf
