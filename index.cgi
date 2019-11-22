@@ -11,6 +11,8 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 #デバッグ機能を有効にする
 cgitb.enable()
 
+import init
+
 #フォーム情報の取り込み
 form = cgi.FieldStorage()
 

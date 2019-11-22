@@ -42,6 +42,7 @@ RUN chmod 755 /var/www/cgi-bin/init.cgi
 RUN chmod 755 /var/www/cgi-bin/addmod.cgi
 RUN chmod 755 /var/www/cgi-bin/form.cgi
 RUN chmod 766 /var/www/cgi-bin/sheetmap.txt
+RUN export LANG=ja_JP.utf8
 
 # CGI scripts go to /opt/rh/httpd24/root/var/www/cgi-bin/
 #ADD share/cgi-bin ${HTTPD_DATA_ORIG_PATH}/cgi-bin/
