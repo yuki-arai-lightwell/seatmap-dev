@@ -31,9 +31,17 @@ RUN chmod 777 /run/httpd
 RUN chmod 777 /var/log/httpd
 ADD httpd.conf /etc/httpd/conf/httpd.conf
 ADD index.html /var/www/html/index.html
+ADD init.cgi /var/www/cgi-bin/init.cgi
 ADD index.cgi /var/www/cgi-bin/index.cgi
+ADD form.cgi /var/www/cgi-bin/form.cgi
+ADD addmod.cgi /var/www/cgi-bin/addmod.cgi
+ADD sheetmap.txt /var/www/cgi-bin/sheetmap.txt
 RUN chmod 766 /var/www/html/index.html
 RUN chmod 755 /var/www/cgi-bin/index.cgi
+RUN chmod 755 /var/www/cgi-bin/init.cgi
+RUN chmod 755 /var/www/cgi-bin/addmod.cgi
+RUN chmod 755 /var/www/cgi-bin/form.cgi
+RUN chmod 766 /var/www/cgi-bin/sheetmap.txt
 
 # CGI scripts go to /opt/rh/httpd24/root/var/www/cgi-bin/
 #ADD share/cgi-bin ${HTTPD_DATA_ORIG_PATH}/cgi-bin/
