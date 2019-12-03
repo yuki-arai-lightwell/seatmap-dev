@@ -20,11 +20,11 @@ ADD form.cgi /var/www/cgi-bin/form.cgi
 ADD addmod.cgi /var/www/cgi-bin/addmod.cgi
 ADD sheetmap.txt /var/www/cgi-bin/sheetmap.txt
 RUN chmod 766 /var/www/html/index.html
-RUN chmod 755 /var/www/cgi-bin/index.cgi
-RUN chmod 755 /var/www/cgi-bin/init.py
+RUN chmod 777 /var/www/cgi-bin/index.cgi
+RUN chmod 777 /var/www/cgi-bin/init.py
 RUN chmod 755 /var/www/cgi-bin/addmod.cgi
 RUN chmod 755 /var/www/cgi-bin/form.cgi
-RUN chmod 766 /var/www/cgi-bin/sheetmap.txt
+RUN chmod 777 /var/www/cgi-bin/sheetmap.txt
 
 ENV LANG ja_JP.utf8
 ENV LANGUAGE ja_JP.utf8
