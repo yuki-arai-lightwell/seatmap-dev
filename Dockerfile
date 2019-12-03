@@ -25,7 +25,11 @@ RUN chmod 755 /var/www/cgi-bin/init.py
 RUN chmod 755 /var/www/cgi-bin/addmod.cgi
 RUN chmod 755 /var/www/cgi-bin/form.cgi
 RUN chmod 766 /var/www/cgi-bin/sheetmap.txt
-CMD export LANG=ja_JP.utf8
+
+RUN locale-gen ja_JP.utf8
+ENV LANG ja_JP.utf8
+ENV LANGUAGE ja_JP.utf8
+ENV LC_ALL ja_JP.utf8
 
 # CGI scripts go to /opt/rh/httpd24/root/var/www/cgi-bin/
 #ADD share/cgi-bin ${HTTPD_DATA_ORIG_PATH}/cgi-bin/
