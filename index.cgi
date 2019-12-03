@@ -2,7 +2,7 @@
 import init
 import cgi
 import cgitb
-#from http import cookies
+from http import cookies
 
 #日本語を処理するのに必要
 #import sys
