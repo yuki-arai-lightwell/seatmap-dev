@@ -2,7 +2,7 @@
 import init
 import cgi
 import cgitb
-#from http import cookies
+from http import cookies
 
 #日本語を処理するのに必要
 #import sys
@@ -14,13 +14,13 @@ import cgitb
 
 
 #フォーム情報の取り込み
-#form = cgi.FieldStorage()
+form = cgi.FieldStorage()
 #
 #if len(form) == 0:
 #    CC=""
 #    C=""
 #else:
-#    CC=form["name"].value
+    CC=form["name"].value
 #    event=form["event"].value
 #    C = cookies.SimpleCookie()
 #    C["name"] = CC
