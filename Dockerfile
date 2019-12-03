@@ -26,7 +26,6 @@ RUN chmod 755 /var/www/cgi-bin/addmod.cgi
 RUN chmod 755 /var/www/cgi-bin/form.cgi
 RUN chmod 766 /var/www/cgi-bin/sheetmap.txt
 
-RUN locale-gen ja_JP.utf8
 ENV LANG ja_JP.utf8
 ENV LANGUAGE ja_JP.utf8
 ENV LC_ALL ja_JP.utf8
