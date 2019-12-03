@@ -5,7 +5,7 @@ import io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 #デバッグ機能を有効にする
-cgitb.enable()
+#cgitb.enable()
 
 def html_head():
   print("Content-type: text/html;\n\n")
