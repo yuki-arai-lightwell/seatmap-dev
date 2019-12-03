@@ -36,7 +36,7 @@ BBB<br>
 <hr>
 CCC<br>
 テスト表示<br>
-<form id="form1" name="form1" method="post" action=test.py>
+<form id="form1" name="form1" method="post" action=index.cgi>
 <br>
 名前：<input type="text" name=name value="名前">
 <input type="submit" value="更新">
