@@ -8,23 +8,6 @@ RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm && \
     rm -rf /var/cache/yum
 
 
-#    yum -y install yum-utils && \
-#    yum -y install gettext  && \
-#    yum -y install hostname && \
-#    yum -y install nss_wrapper && \
-#    yum -y install bind-utils &&\
-#    yum -y install httpd24 &&\ 
-#    yum -y install httpd24-mod_ssl &&\ 
-#    yum -y install httpd24-mod_auth_mellon &&\ 
-#    yum -y install httpd &&\ 
-#    yum -y install perl && \
-#    yum -y install which && \
-#    yum -y install unzip && \
-#    yum -y install net-tools && \
-#    yum -y install perl-DBI && \
-#    rm -rf /var/cache/yum
-#    /usr/libexec/httpd-prepare && rpm-file-permissions
-
 RUN localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
 
 RUN chmod 777 /run/httpd
@@ -42,7 +25,7 @@ RUN chmod 755 /var/www/cgi-bin/init.py
 RUN chmod 755 /var/www/cgi-bin/addmod.cgi
 RUN chmod 755 /var/www/cgi-bin/form.cgi
 RUN chmod 766 /var/www/cgi-bin/sheetmap.txt
-RUN export LANG=ja_JP.utf8
+CMD export LANG=ja_JP.utf8
 
 # CGI scripts go to /opt/rh/httpd24/root/var/www/cgi-bin/
 #ADD share/cgi-bin ${HTTPD_DATA_ORIG_PATH}/cgi-bin/
