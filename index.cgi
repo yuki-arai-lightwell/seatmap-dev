@@ -10,20 +10,20 @@ from http import cookies
 #sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 #デバッグ機能を有効にする
-#cgitb.enable()
+cgitb.enable()
 
 
 #フォーム情報の取り込み
 form = cgi.FieldStorage()
-#
-#if len(form) == 0:
-#    CC=""
-C=""
-#else:
-CC=form["name"].value
-#    event=form["event"].value
-#    C = cookies.SimpleCookie()
-#    C["name"] = CC
+
+if len(form) == 0:
+    CC=""
+    C=""
+else:
+    CC=form["name"].value
+    event=form["event"].value
+    C = cookies.SimpleCookie()
+    C["name"] = CC
 
 #サンプル
 print("Content-type: text/html;\n\n")
