@@ -18,7 +18,7 @@ form = cgi.FieldStorage()
 #
 #if len(form) == 0:
 #    CC=""
-#    C=""
+C=""
 #else:
 CC=form["name"].value
 #    event=form["event"].value
