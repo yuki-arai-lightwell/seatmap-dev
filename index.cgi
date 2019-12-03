@@ -14,17 +14,16 @@ import cgitb
 
 
 #フォーム情報の取り込み
-form = cgi.FieldStorage()
-
-if len(form) == 0:
-    CC=""
-    C=""
-else:
-    CC=form["name"].value
-    event=form["event"].value
-#    print("Set-Cookie: NAME="+CC)
-    C = cookies.SimpleCookie()
-    C["name"] = CC
+#form = cgi.FieldStorage()
+#
+#if len(form) == 0:
+#    CC=""
+#    C=""
+#else:
+#    CC=form["name"].value
+#    event=form["event"].value
+#    C = cookies.SimpleCookie()
+#    C["name"] = CC
 
 #サンプル
 print("Content-type: text/html;\n\n")
