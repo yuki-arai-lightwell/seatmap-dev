@@ -16,6 +16,6 @@ with open('/var/www/cgi-bin/seatmap.txt')as f:
   reader = csv.reader(f)
   data = [row for row in reader]
   
-print([0][1])
+print(data[0][1])
 
 
