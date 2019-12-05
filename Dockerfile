@@ -25,7 +25,8 @@ RUN chmod 777 /var/www/cgi-bin/index.cgi
 RUN chmod 777 /var/www/cgi-bin/init.py
 RUN chmod 755 /var/www/cgi-bin/addmod.cgi
 RUN chmod 755 /var/www/cgi-bin/form.cgi
-RUN chmod 777 /var/www/cgi-bin/sheetmap.txt
+RUN chmod 777 /var/www/cgi-bin/seatmap.txt
+RUN chmod 755 /var/www/cgi-bin/mod.cgi
 
 ENV LANG ja_JP.utf8
 ENV LANGUAGE ja_JP.utf8
