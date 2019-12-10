@@ -10,28 +10,29 @@ RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm && \
 
 RUN localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
 
-RUN chmod 777 /run/httpd
-RUN chmod 777 /var/log/httpd
-ADD httpd.conf /etc/httpd/conf/httpd.conf
-ADD index.html /var/www/html/index.html
-ADD init.py /var/www/cgi-bin/init.py
-ADD index.cgi /var/www/cgi-bin/index.cgi
-ADD form.cgi /var/www/cgi-bin/form.cgi
-ADD addmod.cgi /var/www/cgi-bin/addmod.cgi
-ADD seatmap.txt /var/www/cgi-bin/seatmap.txt
-ADD mod.cgi /var/www/cgi-bin/mod.cgi
-RUN chmod 766 /var/www/html/index.html
-RUN chmod 777 /var/www/cgi-bin/index.cgi
-RUN chmod 777 /var/www/cgi-bin/init.py
-RUN chmod 755 /var/www/cgi-bin/addmod.cgi
-RUN chmod 755 /var/www/cgi-bin/form.cgi
-RUN chmod 777 /var/www/cgi-bin/seatmap.txt
-RUN chmod 755 /var/www/cgi-bin/mod.cgi
-RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+ADD httpd.conf /etc/httpd/conf/httpd.conf\
+    index.html /var/www/html/index.html\
+    init.py /var/www/cgi-bin/init.py\
+    index.cgi /var/www/cgi-bin/index.cgi\
+    form.cgi /var/www/cgi-bin/form.cgi\
+    addmod.cgi /var/www/cgi-bin/addmod.cgi\
+    seatmap.txt /var/www/cgi-bin/seatmap.txt\
+    mod.cgi /var/www/cgi-bin/mod.cgi
 
-ENV LANG ja_JP.utf8
-ENV LANGUAGE ja_JP.utf8
-ENV LC_ALL ja_JP.utf8
+RUN chmod 777 /run/httpd\
+    chmod 777 /var/log/httpd\
+    chmod 766 /var/www/html/index.html\
+    chmod 777 /var/www/cgi-bin/index.cgi\
+    chmod 777 /var/www/cgi-bin/init.py\
+    chmod 755 /var/www/cgi-bin/addmod.cgi\
+    chmod 755 /var/www/cgi-bin/form.cgi\
+    chmod 777 /var/www/cgi-bin/seatmap.txt\
+    chmod 755 /var/www/cgi-bin/mod.cgi\
+    ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+ENV LANG ja_JP.utf8\
+    LANGUAGE ja_JP.utf8\
+    LC_ALL ja_JP.utf8
 
 # CGI scripts go to /opt/rh/httpd24/root/var/www/cgi-bin/
 #ADD share/cgi-bin ${HTTPD_DATA_ORIG_PATH}/cgi-bin/
