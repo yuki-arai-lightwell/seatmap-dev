@@ -12,7 +12,7 @@ RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm && \
                    httpd
 
 RUN rm -rf /var/cache/yum &&\
-    localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
+    localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8 &&\
     ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 COPY httpd.conf /etc/httpd/conf/httpd.conf &&\
