@@ -7,8 +7,8 @@ USER 0
 #    yum -y install httpd && \
 #    rm -rf /var/cache/yum
 
-RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm && \
-                   python36u.x86_64 python36u-libs.x86_64 python36u-devel.x86_64 python36u-pip.noarch && \
+RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+                   python36u.x86_64 python36u-libs.x86_64 python36u-devel.x86_64 python36u-pip.noarch
                    httpd
 
 RUN rm -rf /var/cache/yum &&\
