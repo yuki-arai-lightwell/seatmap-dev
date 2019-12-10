@@ -28,6 +28,8 @@ RUN chmod 755 /var/www/cgi-bin/form.cgi
 RUN chmod 777 /var/www/cgi-bin/seatmap.txt
 RUN chmod 755 /var/www/cgi-bin/mod.cgi
 
+RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
 ENV LANG ja_JP.utf8
 ENV LANGUAGE ja_JP.utf8
 ENV LC_ALL ja_JP.utf8
