@@ -15,14 +15,14 @@ RUN rm -rf /var/cache/yum &&\
     localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8 &&\
     ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-COPY httpd.conf /etc/httpd/conf/httpd.conf &&\
-     index.html /var/www/html/index.html &&\
-     init.py /var/www/cgi-bin/init.py &&\
-     index.cgi /var/www/cgi-bin/index.cgi &&\
-     form.cgi /var/www/cgi-bin/form.cgi &&\
-     addmod.cgi /var/www/cgi-bin/addmod.cgi &&\
-     seatmap.txt /var/www/cgi-bin/seatmap.txt &&\
-     mod.cgi /var/www/cgi-bin/mod.cgi
+COPY httpd.conf /etc/httpd/conf/httpd.conf
+COPY index.html /var/www/html/index.html
+COPY init.py /var/www/cgi-bin/init.py
+COPY index.cgi /var/www/cgi-bin/index.cgi
+COPY form.cgi /var/www/cgi-bin/form.cgi
+COPY addmod.cgi /var/www/cgi-bin/addmod.cgi
+COPY seatmap.txt /var/www/cgi-bin/seatmap.txt
+COPY mod.cgi /var/www/cgi-bin/mod.cgi
 
 RUN chmod 777 /run/httpd &&\
     chmod 777 /var/log/httpd &&\
