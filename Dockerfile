@@ -24,18 +24,18 @@ COPY addmod.cgi /var/www/cgi-bin/addmod.cgi
 COPY seatmap.txt /var/www/cgi-bin/seatmap.txt
 COPY mod.cgi /var/www/cgi-bin/mod.cgi
 
-RUN chmod 777 /run/httpd &&\
-    chmod 777 /var/log/httpd &&\
-    chmod 766 /var/www/html/index.html &&\
-    chmod 777 /var/www/cgi-bin/index.cgi &&\
-    chmod 777 /var/www/cgi-bin/init.py &&\
-    chmod 755 /var/www/cgi-bin/addmod.cgi &&\
-    chmod 755 /var/www/cgi-bin/form.cgi &&\
-    chmod 777 /var/www/cgi-bin/seatmap.txt &&\
+RUN chmod 777 /run/httpd && \
+    chmod 777 /var/log/httpd && \
+    chmod 766 /var/www/html/index.html && \
+    chmod 777 /var/www/cgi-bin/index.cgi && \
+    chmod 777 /var/www/cgi-bin/init.py && \
+    chmod 755 /var/www/cgi-bin/addmod.cgi && \
+    chmod 755 /var/www/cgi-bin/form.cgi && \
+    chmod 777 /var/www/cgi-bin/seatmap.txt && \
     chmod 755 /var/www/cgi-bin/mod.cgi
 
-ENV LANG ja_JP.utf8 &&\
-    LANGUAGE ja_JP.utf8 &&\
+ENV LANG ja_JP.utf8 && \
+    LANGUAGE ja_JP.utf8 && \
     LC_ALL ja_JP.utf8
 
 CMD /usr/sbin/httpd -k start && tail -f /dev/null
