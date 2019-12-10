@@ -17,23 +17,21 @@ form = cgi.FieldStorage()
 if len(form) == 0:
     CC=""
     C=""
+    d=""
 else:
     CC=form["name"].value
     event=form["event"].value
 #    print("Set-Cookie: NAME="+CC)
     C = cookies.SimpleCookie()
     C["name"] = CC
+    d = form["num"].value
 
 #サンプル
 print("Content-type: text/html;\n\n")
 print("<html><body><h1>test cgi</h1>\n")
+print("<hr>")
+print("席番号:",d)
 print("""
-<br>
-AAA<br>
-BBB<br>
-<hr>
-CCC<br>
-テスト表示<br>
 <form id="form1" name="form1" method="post" action=test.py>
 <br>
 名前：<input type="text" name=name value="名前">

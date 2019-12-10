@@ -26,17 +26,14 @@ else:
 
 #サンプル
 print("Content-type: text/html;\n\n")
-print("<html><body><h1>test cgi</h1>\n")
+print("<html><body><h1>TEST</h1>\n")
 print("""
 <br>
-AAA<br>
-BBB<br>
 <hr>
-CCC<br>
 テスト表示<br>
-<form id="form1" name="form1" method="post" action=test.py>
+<form id="form1" name="form1" method="post" action="index.py">
 <br>
-名前：<input type="text" name=name value="名前">
+名前：<input type="text" name=name value="ウェル">
 <input type="submit" value="更新">
 <input type="hidden" name="event" value="mod">
 <input type="hidden" name="num" value="24">
