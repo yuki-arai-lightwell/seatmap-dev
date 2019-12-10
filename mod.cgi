@@ -89,7 +89,6 @@ if form["event"].value == "form":
 
   print("<hr>")
   print("更新するには名前を入力し【更新】ボタンを押してください。席を空席にする場合は、【空席にする】を押してください。<br>")
-  print("<B><U>現状、マルチバイト文字に対応していない暫定バージョンです。半角アルファベットで入力してください。</U></B>")
   print("<form id=\"form1\" name=\"form1\" method=\"post\" action=mod.cgi>")
  
   print("名前：<input type=\"text\" name=\"name\" value=\"",SeatMember,"\">",sep='')
