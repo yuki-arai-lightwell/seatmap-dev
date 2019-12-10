@@ -30,8 +30,8 @@ RUN chmod 777 /run/httpd\
     chmod 755 /var/www/cgi-bin/mod.cgi\
     ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-ENV LANG ja_JP.utf8\
-ENV LANGUAGE ja_JP.utf8\
+ENV LANG ja_JP.utf8
+ENV LANGUAGE ja_JP.utf8
 ENV LC_ALL ja_JP.utf8
 
 # CGI scripts go to /opt/rh/httpd24/root/var/www/cgi-bin/
