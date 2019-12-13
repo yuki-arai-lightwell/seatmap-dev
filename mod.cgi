@@ -23,6 +23,7 @@ form = cgi.FieldStorage()
 if "event" not in form:
   print("Content-type: text/html;\n\n")
   print("<html><body><h1>更新処理ERROR-1</h1>\n")
+  print("<META http-equiv=Refresh content='5;URL=./index.cgi'>")
   print("<hr>")
   print("イベントが不正です。トップ画面から操作してください。")
   print("<hr>")
@@ -34,6 +35,7 @@ if "event" not in form:
 if "num" not in form:
   print("Content-type: text/html;\n\n")
   print("<html><body><h1>更新処理ERROR-2</h1>\n")
+  print("<META http-equiv=Refresh content='5;URL=./index.cgi'>")
   print("<hr>")
   print("席番号不明。トップ画面から操作してください。")
   print("<hr>")
@@ -49,6 +51,7 @@ intSeatNum = int(SeatNum)
 if intSeatNum < 1 or intSeatNum > 24 :
   print("Content-type: text/html;\n\n")
   print("<html><body><h1>更新処理ERROR-3</h1>\n")
+  print("<META http-equiv=Refresh content='5;URL=./index.cgi'>")
   print("<hr>")
   print("席番号",SeatNum,"は範囲外です。トップ画面から操作してください。")
   print("<hr>")
@@ -70,13 +73,14 @@ if form["event"].value == "form":
   #リストから指定の席番号の情報を取得(現使用者と最終更新)
   SeatMember = data[int(SeatNum)-1][1]
   RegiDate = data[int(SeatNum)-1][2]
-  
+
   #画面出力
   print("Content-type: text/html;\n\n")
-  print("<html><body><h1>座席の更新</h1>\n")  
+  print("<html><body><h1>座席の更新</h1>\n")
   print("<hr>")
   if "forcemod" not in form:
     if SeatMember == "":
+      print("<META http-equiv=Refresh content='5;URL=./index.cgi'>")
       print("席番号 ",SeatNum," は現在利用されていません。トップ画面に戻り、登録画面で登録してください。")
       print("<br><hr><a href=./index.cgi>TOP</a><br>")
       print("</body></html>\n")
@@ -90,7 +94,7 @@ if form["event"].value == "form":
   print("<hr>")
   print("更新するには名前を入力し【更新】ボタンを押してください。席を空席にする場合は、【空席にする】を押してください。<br>")
   print("<form id=\"form1\" name=\"form1\" method=\"post\" action=mod.cgi>")
- 
+
   print("名前：<input type=\"text\" name=\"name\" value=\"",SeatMember,"\">",sep='')
   print("""
 <input type=\"submit\" name=\"submod\" value=\"更新\">
@@ -102,7 +106,7 @@ if form["event"].value == "form":
 
   print("<a href=./index.cgi>TOP</a>")
   print("</body></html>\n")
-  sys.exit(0)  
+  sys.exit(0)
 
 
 #更新モード（event=mod)
@@ -110,26 +114,28 @@ if form["event"].value == "mod":
   if "name" not in form:
     print("Content-type: text/html;\n\n")
     print("<html><body><h1>更新処理ERROR-5</h1>\n")
+    print("<META http-equiv=Refresh content='5;URL=./mod.cgi?&event=form&num=",intSeatNum,"'>",sep='')
     print("<hr>")
     print("名前を入力してください。")
     print("<hr>")
     print("<a href=\"./mod.cgi?&event=form&num=",intSeatNum,"\">戻る</a>",sep='')
     print("</body></html>\n")
-    sys.exit(0) 
+    sys.exit(0)
 
 
   #リストから指定の席番号の情報を取得(現使用者と最終更新)
   SeatMemberMod = form["name"].value
   print("Content-type: text/html;\n\n")
   print("<html><body><h1>座席の更新</h1>\n")
+  print("<META http-equiv=Refresh content='5;URL=./index.cgi'>")
   print("<hr>")
-  
+
   #ファイルを読み込み
 # with open('/var/www/cgi-bin/seatmap.txt')as f:
   with open('/var/www/cgi-bin/seatmap.txt',encoding='utf-8')as f:
     reader = csv.reader(f)
     data = [row for row in reader]
-    
+
   for i in range(len(data)):
     if int(data[i][0]) == intSeatNum :
       if "subclear" not in form:
@@ -148,8 +154,8 @@ if form["event"].value == "mod":
   with open('/var/www/cgi-bin/seatmap.txt','w',encoding='utf-8')as f:
     writer = csv.writer(f)
     writer.writerows(data)
-     
-    
+
+
   print("<hr>")
   print("<a href=\"./mod.cgi?&event=form&num=",intSeatNum,"\">戻る</a>",sep='')
   print("<a href=./index.cgi>TOP</a>")
@@ -159,12 +165,10 @@ if form["event"].value == "mod":
 #エラー処理：イベント不正時の画面表示(eventが空以外で何かしら指定している場合)
 print("Content-type: text/html;\n\n")
 print("<html><body><h1>更新処理ERROR-9</h1>\n")
+print("<META http-equiv=Refresh content='5;URL=./index.cgi'>")
 print("<hr>")
 print("イベントが不正です。トップ画面から操作してください。")
 print("<hr>")
 print("<a href=./index.cgi>TOP</a>")
 print("</body></html>\n")
 sys.exit(0)
-
-
-
