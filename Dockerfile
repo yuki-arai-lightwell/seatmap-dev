@@ -10,8 +10,8 @@ RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm && \
 
 RUN localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
 
-RUN chmod 755 /run/httpd
-RUN chmod 755 /var/log/httpd
+RUN chmod 777 /run/httpd
+RUN chmod 777 /var/log/httpd
 ADD httpd.conf /etc/httpd/conf/httpd.conf
 ADD index.html /var/www/html/index.html
 ADD init.py /var/www/cgi-bin/init.py
