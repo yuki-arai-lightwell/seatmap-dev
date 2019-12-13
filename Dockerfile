@@ -19,6 +19,7 @@ ADD index.cgi /var/www/cgi-bin/index.cgi
 ADD form.cgi /var/www/cgi-bin/form.cgi
 ADD addmod.cgi /var/www/cgi-bin/addmod.cgi
 ADD seatmap.txt /var/www/cgi-bin/seatmap.txt
+ADD seatmap.org /var/www/cgi-bin/seatmap.org
 ADD mod.cgi /var/www/cgi-bin/mod.cgi
 RUN chmod 660 /var/www/html/index.html
 RUN chmod 750 /var/www/cgi-bin/index.cgi
