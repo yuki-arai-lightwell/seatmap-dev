@@ -1,7 +1,7 @@
 FROM centos:7
 
 USER 0
-
+ARG HTTP_PROXY
 #RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 RUN yum -y install python36u.x86_64 python36u-libs.x86_64 python36u-devel.x86_64 python36u-pip.noarch
 RUN yum -y install httpd
