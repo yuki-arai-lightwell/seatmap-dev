@@ -1,10 +1,8 @@
 FROM centos:7
 
 USER 0
-RUN echo $http_proxy
-RUN echo $https_proxy
-RUN echo $HTTP_PROXY
-RUN echo $HTTP_PROXY
+RUN curl -v http://8.8.8.8
+RUN curl -v https://8.8.8.8
 RUN hostname
 RUN tracepath 192.168.2.200
 #RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
