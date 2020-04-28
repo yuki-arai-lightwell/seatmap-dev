@@ -6,7 +6,7 @@ RUN echo $https_proxy
 RUN echo $HTTP_PROXY
 RUN echo $HTTP_PROXY
 RUN hostname
-RUN podman info
+RUN tracepath 192.168.2.200
 #RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 RUN yum -y install python36u.x86_64 python36u-libs.x86_64 python36u-devel.x86_64 python36u-pip.noarch
 RUN yum -y install httpd
