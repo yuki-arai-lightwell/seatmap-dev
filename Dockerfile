@@ -4,38 +4,38 @@ USER 0
 RUN hostname
 RUN tracepath 192.168.2.200
 #RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
-RUN yum -y install python36u.x86_64 python36u-libs.x86_64 python36u-devel.x86_64 python36u-pip.noarch
-RUN yum -y install httpd
-RUN rm -rf /var/cache/yum
+#RUN yum -y install python36u.x86_64 python36u-libs.x86_64 python36u-devel.x86_64 python36u-pip.noarch
+#RUN yum -y install httpd
+#RUN rm -rf /var/cache/yum
 
 
-RUN localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
+#RUN localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
 
-RUN chmod 777 /run/httpd
-RUN chmod 777 /var/log/httpd
-ADD httpd.conf /etc/httpd/conf/httpd.conf
-ADD index.html /var/www/html/index.html
-ADD init.py /var/www/cgi-bin/init.py
-ADD index.cgi /var/www/cgi-bin/index.cgi
-ADD form.cgi /var/www/cgi-bin/form.cgi
-ADD addmod.cgi /var/www/cgi-bin/addmod.cgi
-ADD seatmap.txt /var/www/cgi-bin/seatmap.txt
-ADD seatmap.org /var/www/cgi-bin/seatmap.org
-ADD mod.cgi /var/www/cgi-bin/mod.cgi
-RUN chmod 660 /var/www/html/index.html
-RUN chmod 750 /var/www/cgi-bin/index.cgi
-RUN chmod 750 /var/www/cgi-bin/init.py
-RUN chmod 750 /var/www/cgi-bin/addmod.cgi
-RUN chmod 750 /var/www/cgi-bin/form.cgi
-RUN chmod 660 /var/www/cgi-bin/seatmap.txt
-RUN chmod 660 /var/www/cgi-bin/seatmap.org
-RUN chmod 750 /var/www/cgi-bin/mod.cgi
+#RUN chmod 777 /run/httpd
+#RUN chmod 777 /var/log/httpd
+#ADD httpd.conf /etc/httpd/conf/httpd.conf
+#ADD index.html /var/www/html/index.html
+#ADD init.py /var/www/cgi-bin/init.py
+#ADD index.cgi /var/www/cgi-bin/index.cgi
+#ADD form.cgi /var/www/cgi-bin/form.cgi
+#ADD addmod.cgi /var/www/cgi-bin/addmod.cgi
+#ADD seatmap.txt /var/www/cgi-bin/seatmap.txt
+#ADD seatmap.org /var/www/cgi-bin/seatmap.org
+#ADD mod.cgi /var/www/cgi-bin/mod.cgi
+#RUN chmod 660 /var/www/html/index.html
+#RUN chmod 750 /var/www/cgi-bin/index.cgi
+#RUN chmod 750 /var/www/cgi-bin/init.py
+#RUN chmod 750 /var/www/cgi-bin/addmod.cgi
+#RUN chmod 750 /var/www/cgi-bin/form.cgi
+#RUN chmod 660 /var/www/cgi-bin/seatmap.txt
+#RUN chmod 660 /var/www/cgi-bin/seatmap.org
+#RUN chmod 750 /var/www/cgi-bin/mod.cgi
 
-RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+#RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-ENV LANG ja_JP.utf8
-ENV LANGUAGE ja_JP.utf8
-ENV LC_ALL ja_JP.utf8
+#ENV LANG ja_JP.utf8
+#ENV LANGUAGE ja_JP.utf8
+#ENV LC_ALL ja_JP.utf8
 
 # CGI scripts go to /opt/rh/httpd24/root/var/www/cgi-bin/
 #ADD share/cgi-bin ${HTTPD_DATA_ORIG_PATH}/cgi-bin/
@@ -43,4 +43,4 @@ ENV LC_ALL ja_JP.utf8
 # Static files go to /opt/rh/httpd24/root/var/www/html
 #ADD share/html ${HTTPD_DATA_ORIG_PATH}/html
 
-CMD /usr/sbin/httpd -k start && tail -f /dev/null
+#CMD /usr/sbin/httpd -k start && tail -f /dev/null
