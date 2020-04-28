@@ -1,8 +1,6 @@
 FROM centos:7
 
 USER 0
-RUN curl -v http://8.8.8.8
-RUN curl -v https://8.8.8.8
 RUN hostname
 RUN tracepath 192.168.2.200
 #RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
