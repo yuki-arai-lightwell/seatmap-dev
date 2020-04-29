@@ -1,4 +1,4 @@
-FROM centos:7
+FROM registry.redhat.io/ubi7
 
 USER 0
 RUN  yum -y install httpd
