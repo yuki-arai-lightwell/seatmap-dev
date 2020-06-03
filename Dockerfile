@@ -1,4 +1,4 @@
-FROM registry.redhat.io/ubi7
+FROM centos:7
 
 ENV http_proxy "http://192.168.2.200:3128"
 ENV https_proxy "http://192.168.2.200:3128"
